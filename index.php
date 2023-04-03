@@ -24,7 +24,7 @@
     <?php if (isset($_SESSION['userId'])) {
         $userId = $_SESSION['userId'];
     } else {
-        header('location: ' . HOMEURL . '/login.php');
+        header('location: ' . HOMEURL . 'login.php');
         exit();
     } ?>
 
@@ -43,6 +43,11 @@
                 <?php if (isset($_SESSION['login'])) {
                     echo $_SESSION['login'];
                     unset($_SESSION['login']);
+                } ?>
+
+                <?php if (isset($_SESSION['complain-lodge-success'])) {
+                    echo $_SESSION['complain-lodge-success'];
+                    unset($_SESSION['complain-lodge-success']);
                 } ?>
             </div>
             <div class="table-responsive">

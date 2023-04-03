@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./client-styles/admin.css" />
   <title>Grievance Cell | Login</title>
@@ -33,6 +32,8 @@
       <br />
       <!-- sessionalMessages -->
       <div>
+        <p class="text-center">New to <b>Grievance Cell</b> ? <a href="register.php">Register</a>
+          here !</p>
         <?php
         if (isset($_SESSION['logout'])) {
           echo $_SESSION['logout'];
@@ -64,7 +65,7 @@
   $username = $_POST['username'];
   $password = md5($_POST['password']);
 
-  $sql = "SELECT * FROM tbl_admin WHERE username='$username' AND password='$password'";
+  $sql = "SELECT * FROM tbl_user WHERE username='$username' AND password='$password'";
 
   $res = mysqli_query($conn, $sql);
 
@@ -86,7 +87,7 @@
     $_SESSION['login'] =
       '<p class="text-center">Failed to login | Wrong credentials !</p>';
 
-    header('location:' . HOMEURL . '/login.php');
+    header('location:' . HOMEURL . 'login.php');
   }
 }
 ?>

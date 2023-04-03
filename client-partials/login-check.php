@@ -10,6 +10,6 @@ if (!isset($_SESSION['user'])) {
 
 
   // redirecting
-  header('location:' . HOMEURL . '/login.php');
+  header('location:' . HOMEURL . 'login.php');
 }
 ?>

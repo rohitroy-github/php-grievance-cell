@@ -1,7 +1,25 @@
-<!-- <?php
-include '../config/constants.php';
-include './partials/login-check.php';
-?> -->
+<?php
+include './client-partials/constants.php';
+?>
+
+<?php
+// fethcingUserID
+if (isset($_SESSION['userId'])) {
+    $userId = $_SESSION['userId'];
+} else {
+    header('location: ' . HOMEURL . '/login.php');
+    exit();
+}
+
+// fetchingUserDetails
+$sql2 = "SELECT * FROM tbl_user WHERE id='$userId'";
+$res2 = mysqli_query($conn, $sql2);
+$rows2 = mysqli_fetch_assoc($res2);
+
+$full_name = $rows2['full_name'];
+$contact = $rows2['contact'];
+$email = $rows2['email'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +33,7 @@ include './partials/login-check.php';
     <link rel="stylesheet" href="./client-styles/add-complain.css" />
     <link rel="stylesheet" href="./client-styles/clientStyles.css" />
 
-    <title>Raise A Complain</title>
+    <title>Lodge A Complain</title>
 </head>
 
 <body>
@@ -24,20 +42,6 @@ include './partials/login-check.php';
             <form class="login-form" action="" method="POST" enctype="multipart/form-data">
                 <h2 class="text-center">Lodge A Complain</h2>
                 <br />
-                <!-- Printing SUCCESSS message -->
-                <?php
-                if (isset($_SESSION['food-image-upload-failed'])) {
-                    echo $_SESSION['food-image-upload-failed'];
-                    // Ending session
-                    unset($_SESSION['food-image-upload-failed']);
-                }
-
-                if (isset($_SESSION['add-food'])) {
-                    echo $_SESSION['add-food'];
-                    // Ending session
-                    unset($_SESSION['add-food']);
-                }
-                ?>
                 <div class="form-group">
                     <label for="title">Complain Header</label>
                     <input name="title" type="text" class="form-control" id="title"
@@ -68,16 +72,22 @@ include './partials/login-check.php';
                 <div class="form-group">
                     <label for="username">Contact Email</label>
                     <input name="full_name" type="email" class="form-control" id="full_name"
-                        placeholder="Enter your email ?" />
+                        placeholder="Enter your email ?" value="<?php echo $full_name; ?>" />
                 </div>
-                <!-- <div class="form-group">
-                    <label for="image">Upload Image</label>
-                    <input name="image" type="file" id="image" placeholder="Upload dish image ?" required />
-                </div> -->
                 <button name="submit" type="submit" class="btn formBtn" value="add-dish">
                     Lodge Complain
                 </button>
             </form>
+            <br />
+            <!-- sessionalMessages -->
+            <div>
+                <?php
+                if (isset($_SESSION['complain-lodge-failure'])) {
+                    echo $_SESSION['complain-lodge-failure'];
+                    unset($_SESSION['complain-lodge-failure']);
+                }
+                ?>
+            </div>
         </div>
     </div>
 
@@ -91,105 +101,43 @@ include './partials/login-check.php';
 <?php if (isset($_POST['submit'])) {
     // Store in variables
 
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $price = $_POST['price'];
-    $category = $_POST['category'];
-
-    // Radio input type
-
-    // Featured Option
-
-    if (isset($_POST['featured'])) {
-        $featured = $_POST['featured'];
-    } else {
-        $featured = 'No';
-    }
-
-    // Active Option
-
-    if (isset($_POST['active'])) {
-        $active = $_POST['active'];
-    } else {
-        $active = 'No';
-    }
-
-    //Checking for image file availibility
-
-    //Display all data of Files/ Image
-    // print_r($_FILES['image']);
-
-    if (isset($_FILES['image']['name'])) {
-        //Upload Image
-
-        // Auto-Rename our images
-        $image_name = $_FILES['image']['name'];
-
-        if ($image_name != '') {
-            $ext = explode('.', $image_name);
-
-            $extension = end($ext);
-
-            $image_name_renamed =
-                'food-name-' .
-                $title .
-                '-' .
-                rand(0000, 9999) .
-                '.' .
-                $extension;
-
-            echo $image_name_renamed;
-
-            $source_path = $_FILES['image']['tmp_name'];
-
-            $destination_path = '../images/food/' . $image_name_renamed;
-
-            $upload = move_uploaded_file($source_path, $destination_path);
-
-            // Check Uploaded/ Not ?
-
-            if ($upload == false) {
-                // If upload failed ?
-
-                $_SESSION['food-image-upload-failed'] =
-                    '<p class="text-center">Failed to upload selected image !</p>';
-                header('location:' . HOMEURL . 'admin/add-food.php');
-
-                // Stop Processing
-
-                die();
-            }
-        }
-    } else {
-        // Upload Rejected !
-
-        $image_name = '';
-    }
+    $full_name = $_POST['full_name'];
+    $contact = $_POST['contact'];
+    $email = $_POST['email'];
+    $userId = $_POST['user_id'];
+    $complain = $_POST['complain'];
+    $complain_header = $_POST['complain_header'];
+    $category_id = $_POST['category_id'];
 
     // Set SQL query
+    $sql = "INSERT INTO tbl_reciever SET
+    full_name = '$full_name',
+    user_id = '$userId',
+    contact = '$contact',
+    email = '$email',
+    complain = '$complain'
+    complain_header = '$complain_header'
+    ";
 
-    $sql2 = "INSERT INTO tbl_food SET title = '$title',description = '$description',price = $price,image_name = '$image_name_renamed',category_id = $category,featured = '$featured',active = '$active'";
+    // executeQuery
+    ($res = mysqli_query($conn, $sql)) or die(mysqli_error());
 
-    // Execute query into database
-    $res2 = mysqli_query($conn, $sql2);
-
-    // Check whether data is inserted ?
-
-    if ($res2 == true) {
+    // dataInserted?
+    if ($res == true) {
         // Data Insertion Successfull !
 
-        $_SESSION['add-food'] =
-            '<p class="text-center">Menu item added successfully !</p>';
+        $_SESSION['complain-lodge-success'] =
+            '<p class="text-center">Complain lodged successfully !</p>';
 
-        // Redirect to ManageAdmin Page
-        header('location:' . HOMEURL . 'admin/manage-food.php');
+        // Redirect to dashboard
+        header('location:' . HOMEURL . '/index.php');
     } else {
         // Data Insertion Failed !
 
-        $_SESSION['add-food'] =
-            '<p class="text-center">Failed to delete menu item !</p>';
+        $_SESSION['complain-lodge-failure'] =
+            '<p class="text-center">Failed to lodge complain. Please try again later !</p>';
 
-        // Redirect to addAdmin Page again
-        header('location:' . HOMEURL . 'admin/add-food.php');
+        // Redirect to retry
+        header('location:' . HOMEURL . '/add-complain.php');
     }
 }
