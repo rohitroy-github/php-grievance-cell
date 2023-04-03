@@ -30,8 +30,8 @@ include './partials/login-check.php';
                 } ?>
                 <div class="form-group">
                     <label for="username">Category Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter a category title ?"
-                        required />
+                    <input name="title" type="text" class="form-control" id="title"
+                        placeholder="Enter a category title ?" required />
                 </div>
                 <button name="submit" type="submit" class="btn btn-primaryColor" value="login">
                     Add New Category

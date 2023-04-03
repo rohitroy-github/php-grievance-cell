@@ -1,8 +1,3 @@
-<?php
-include './partials/constants.php';
-include './partials/login-check.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,43 +110,43 @@ include './partials/login-check.php';
                                     $id = $rows['id'];
                                     $title = $rows['title'];
                                     ?>
-                        <tr>
-                            <td>
-                                <p>
-                                    <?php echo $sn++; ?>
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <?php echo $title; ?>
-                                </p>
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-center">
-                                    <a href="<?php echo HOMEURL; ?>admin/update-category.php?id=
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <?php echo $sn++; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <?php echo $title; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <a href="<?php echo HOMEURL; ?>admin/update-category.php?id=
                                     <?php echo $id; ?>" class="btn adminPanelBtn mr-2">
-                                        Update Category
-                                    </a>
-                                    <a href="<?php echo HOMEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>"
-                                        class="btn adminPanelBtn mr-2">
-                                        Delete Category
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                                                    Update Category
+                                                </a>
+                                                <a href="<?php echo HOMEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn mr-2">
+                                                    Delete Category
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                        <?php
+                                    <?php
                                 }
                             } else {
-                                 ?>
-                        <tr>
-                            <td>
-                                <p class="text-center">
-                                    No categories found yet !
-                                </p>
-                            </td>
-                        </tr>
-                        <?php
+                                ?>
+                                <tr>
+                                    <td>
+                                        <p class="text-center">
+                                            No categories found yet !
+                                        </p>
+                                    </td>
+                                </tr>
+                                <?php
                             }
                         }
                         ?>

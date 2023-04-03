@@ -36,9 +36,7 @@
       <br />
       <!-- sessionalMessages -->
       <div>
-        <p class="text-center">Just want to register your complain ? <a href="<?php echo HOMEURL; ?>login.php">Login</a>
-          as an user here
-          !</p>
+        <p class="text-center">Are you an user ? <a href="<?php echo HOMEURL; ?>login.php">Login</a> here !</p>
         <?php
         if (isset($_SESSION['logout'])) {
           echo $_SESSION['logout'];

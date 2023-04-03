@@ -97,7 +97,6 @@
                                     $rows2 = mysqli_fetch_assoc($res2);
                                     $category_title = $rows2['title'];
                                     ?>
-
                                     <tr>
                                         <td>
                                             <p>
