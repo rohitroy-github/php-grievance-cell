@@ -37,22 +37,16 @@
                     unset($_SESSION['add-admin-success']);
                 }
 
-                if (isset($_SESSION['delete'])) {
-                    echo $_SESSION['delete'];
+                if (isset($_SESSION['update-admin-success'])) {
+                    echo $_SESSION['update-admin-success'];
                     // Ending session
-                    unset($_SESSION['delete']);
+                    unset($_SESSION['update-admin-success']);
                 }
 
-                if (isset($_SESSION['update'])) {
-                    echo $_SESSION['update'];
+                if (isset($_SESSION['delete-admin'])) {
+                    echo $_SESSION['delete-admin'];
                     // Ending session
-                    unset($_SESSION['update']);
-                }
-
-                if (isset($_SESSION['update-password'])) {
-                    echo $_SESSION['update-password'];
-                    // Ending session
-                    unset($_SESSION['update-password']);
+                    unset($_SESSION['delete-admin']);
                 }
 
                 if (isset($_SESSION['user-not-found'])) {
@@ -129,11 +123,11 @@
                                                     class="btn adminPanelBtn mr-2">
                                                     Change Password
                                                 </a> -->
-                                                <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
+                                                <a href="<?php echo HOMEURL; ?>admin/update-admin.php?adminId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
                                                     View / Update Admin
                                                 </a>
-                                                <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>"
+                                                <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?adminId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn">
                                                     Delete Admin
                                                 </a>

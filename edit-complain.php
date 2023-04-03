@@ -21,7 +21,7 @@ $contact = $rows2['contact'];
 $email = $rows2['email'];
 
 // extractingIDFromURL
-$complainId = $_GET['complainId']; // extract the id value from the URL parameter
+$complainId = $_GET['complainId'];
 
 // fetchingPreviousComplainDetails
 $sql_tbl_complain = "SELECT * FROM tbl_complain WHERE id='$complainId'";
