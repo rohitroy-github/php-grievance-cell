@@ -20,8 +20,8 @@
   </div>
 
   <?php if (isset($_SESSION['login'])) {
-      echo $_SESSION['login'];
-      unset($_SESSION['login']);
+    echo $_SESSION['login'];
+    unset($_SESSION['login']);
   } ?>
 
   <!-- mainContentSection -->
@@ -56,19 +56,19 @@
                 </h3>
               </td>
               <td>
-   
+
                 <h3>
-5                 </h3>
-              </td>
-              <td>
-              
-                <h3>
-5                </h3>
+                  5 </h3>
               </td>
               <td>
 
                 <h3>
-       5
+                  5 </h3>
+              </td>
+              <td>
+
+                <h3>
+                  5
                 </h3>
               </td>
             </tr>
