@@ -66,6 +66,9 @@
                                 <h6><b>Date</b></h6>
                             </th>
                             <th>
+                                <h6><b>Status</b></h6>
+                            </th>
+                            <th>
                                 <h6><b>Actions</b></h6>
                             </th>
                         </tr>
@@ -89,13 +92,15 @@
 
                                     $id = $rows['id'];
                                     $complain_header = $rows['complain_header'];
-                                    $complain_date = $rows['complain_date'];
 
                                     $category_id = $rows['category_id'];
                                     $sql2 = "SELECT * FROM tbl_complain_category WHERE id='$category_id'";
                                     $res2 = mysqli_query($conn, $sql2);
                                     $rows2 = mysqli_fetch_assoc($res2);
                                     $category_title = $rows2['title'];
+
+                                    $complain_date = $rows['complain_date'];
+                                    $status = $rows['status'];
                                     ?>
                                     <tr>
                                         <td>
@@ -116,6 +121,11 @@
                                         <td>
                                             <p>
                                                 <?php echo $complain_date; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <?php echo $status; ?>
                                             </p>
                                         </td>
                                         <td>

@@ -76,10 +76,16 @@
           }
 
           // fetchingTotalComplains
-          $sql_complain = 'SELECT * FROM tbl_complain';
-          $res_complain = mysqli_query($conn, $sql_complain);
-          if ($res_complain == true) {
-            $count_complain = mysqli_num_rows($res_complain);
+          $sql_complain_unresolved = 'SELECT * FROM tbl_complain WHERE status="unresolved"';
+          $res_complain_unresolved = mysqli_query($conn, $sql_complain_unresolved);
+          if ($res_complain_unresolved == true) {
+            $count_complain_unresolved = mysqli_num_rows($res_complain_unresolved);
+          }
+
+          $sql_complain_resolved = 'SELECT * FROM tbl_complain WHERE status="resolved"';
+          $res_complain_resolved = mysqli_query($conn, $sql_complain_resolved);
+          if ($res_complain_resolved == true) {
+            $count_complain_resolved = mysqli_num_rows($res_complain_resolved);
           }
           ?>
           <tbody>
@@ -101,12 +107,12 @@
               </td>
               <td>
                 <h3>
-                  <?php echo $count_complain; ?>
+                  <?php echo $count_complain_unresolved; ?>
                 </h3>
               </td>
               <td>
                 <h3>
-                  <?php echo $count_complain; ?>
+                  <?php echo $count_complain_resolved; ?>
                 </h3>
               </td>
             </tr>

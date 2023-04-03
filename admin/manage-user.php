@@ -24,7 +24,6 @@
             <h2 style="font-weight: 500; text-align: center;">
                 <b>Manage Users</b>
             </h2>
-            <br />
             <!-- sessionalMessages -->
             <div>
                 <?php
@@ -65,7 +64,7 @@
                 }
                 ?>
             </div>
-
+            <br />
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -123,10 +122,10 @@
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
+                                                <!-- <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
                                                     Change Password
-                                                </a>
+                                                </a> -->
                                                 <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
                                                     View / Update User

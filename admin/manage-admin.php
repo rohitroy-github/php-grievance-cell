@@ -17,15 +17,16 @@
     <div class="top-container">
         <?php include './partials/navbar.php'; ?>
     </div>
-
     <!-- Main Content Section-->
     <div class="main-container container">
         <div class="content">
             <h2 style="font-weight: 500; text-align: center;">
                 <b>Manage Admins</b>
             </h2>
-            <div class="d-flex justify-content-center" style="padding: 1%;">
-                <a href="add-admin.php" class="btn adminPanelBtn">Add New Admin</a>
+            <div class="d-flex justify-content-center" style="padding: 0; padding-bottom: 1%">
+                <a href="add-admin.php" class="btn adminPanelBtn">
+                    Add New Admin
+                </a>
             </div>
             <!-- sessionalMessages -->
             <div>
@@ -67,7 +68,6 @@
                 }
                 ?>
             </div>
-
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -101,13 +101,11 @@
 
                             if ($count > 0) {
                                 while ($rows = mysqli_fetch_assoc($res)) {
-
                                     //Run as long as data is available
                                     $id = $rows['id'];
                                     $full_name = $rows['full_name'];
                                     $username = $rows['username'];
                                     ?>
-
                                     <tr>
                                         <td>
                                             <p>
@@ -127,13 +125,13 @@
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
+                                                <!-- <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
                                                     Change Password
-                                                </a>
+                                                </a> -->
                                                 <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
-                                                    Update Admin
+                                                    View / Update Admin
                                                 </a>
                                                 <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn">

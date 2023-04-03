@@ -28,7 +28,6 @@
                     Add New Category
                 </a>
             </div>
-
             <div>
                 <?php
                 if (isset($_SESSION['category-add-success'])) {
@@ -75,7 +74,6 @@
                 }
                 ?>
             </div>
-
             <div class="table-responsive">
                 <table class="table">
                     <thead>

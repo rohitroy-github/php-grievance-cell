@@ -16,14 +16,13 @@
     <div class="top-container">
         <?php include './partials/navbar.php'; ?>
     </div>
-
     <!-- mainContentSection -->
     <div class="main-container container">
         <div class="content">
             <h2 style="font-weight: 500; text-align: center;">
                 <b>Manage Complain</b>
             </h2>
-            <br />
+            <!-- sessionalMessages -->
             <div>
                 <?php if (isset($_SESSION['update-order'])) {
                     echo $_SESSION['update-order'];
@@ -31,6 +30,7 @@
                     unset($_SESSION['update-order']);
                 } ?>
             </div>
+            <br />
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -85,6 +85,7 @@
                                     $category_title = $rows2['title'];
 
                                     $complain_date = $rows['complain_date'];
+                                    $status = $rows['status'];
                                     ?>
                                     <tr>
                                         <td>
