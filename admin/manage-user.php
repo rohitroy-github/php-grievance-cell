@@ -27,24 +27,16 @@
             <!-- sessionalMessages -->
             <div>
                 <?php
-                if (isset($_SESSION['add'])) {
-                    echo $_SESSION['add'];
+                if (isset($_SESSION['update-user-success'])) {
+                    echo $_SESSION['update-user-success'];
                     // Ending session
-                    unset($_SESSION['add']);
+                    unset($_SESSION['update-user-success']);
                 }
-
-                if (isset($_SESSION['delete'])) {
-                    echo $_SESSION['delete'];
+                if (isset($_SESSION['delete-user'])) {
+                    echo $_SESSION['delete-user'];
                     // Ending session
-                    unset($_SESSION['delete']);
+                    unset($_SESSION['delete-user']);
                 }
-
-                if (isset($_SESSION['update'])) {
-                    echo $_SESSION['update'];
-                    // Ending session
-                    unset($_SESSION['update']);
-                }
-
                 if (isset($_SESSION['update-password'])) {
                     echo $_SESSION['update-password'];
                     // Ending session
@@ -126,11 +118,11 @@
                                                     class="btn adminPanelBtn mr-2">
                                                     Change Password
                                                 </a> -->
-                                                <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
+                                                <a href="<?php echo HOMEURL; ?>admin/update-user.php?userId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
                                                     View / Update User
                                                 </a>
-                                                <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>"
+                                                <a href="<?php echo HOMEURL; ?>admin/delete-user.php?userId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn">
                                                     Delete User
                                                 </a>
