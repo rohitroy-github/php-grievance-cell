@@ -15,8 +15,8 @@
 <body>
     <!-- Menu Section -->
     <div class="top-container">
-      <?php include './partials/navbar.php'; ?>
-    </div>  
+        <?php include './partials/navbar.php'; ?>
+    </div>
 
     <!-- Main Content Section-->
     <div class="main-container container">
@@ -25,15 +25,15 @@
                 <b>Manage Admins</b>
             </h2>
             <div class="d-flex justify-content-center" style="padding: 1%;">
-            <a href="add-admin.php" class="btn adminPanelBtn">Add New Admin</a>
-</div>
-
+                <a href="add-admin.php" class="btn adminPanelBtn">Add New Admin</a>
+            </div>
+            <!-- sessionalMessages -->
             <div>
                 <?php
-                if (isset($_SESSION['add'])) {
-                    echo $_SESSION['add'];
+                if (isset($_SESSION['add-admin-success'])) {
+                    echo $_SESSION['add-admin-success'];
                     // Ending session
-                    unset($_SESSION['add']);
+                    unset($_SESSION['add-admin-success']);
                 }
 
                 if (isset($_SESSION['delete'])) {
@@ -108,42 +108,42 @@
                                     $username = $rows['username'];
                                     ?>
 
-                        <tr>
-                            <td>
-                                <p>
-                                    <?php echo $sn++; ?>
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <?php echo $full_name; ?>
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <?php echo $username; ?>
-                                </p>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <?php echo $sn++; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <?php echo $full_name; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <?php echo $username; ?>
+                                            </p>
 
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-center">
-                                    <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
-                                        class="btn adminPanelBtn mr-2">
-                                        Change Password
-                                    </a>
-                                    <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
-                                        class="btn adminPanelBtn mr-2">
-                                        Update Admin
-                                    </a>
-                                    <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>"
-                                        class="btn adminPanelBtn">
-                                        Delete Admin
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn mr-2">
+                                                    Change Password
+                                                </a>
+                                                <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn mr-2">
+                                                    Update Admin
+                                                </a>
+                                                <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn">
+                                                    Delete Admin
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                        <?php
+                                    <?php
                                 }
                             }
                         }
@@ -154,10 +154,10 @@
         </div>
     </div>
 
-   <!-- footerSection -->
-   <div class="bottom-container">
-   <?php include './partials/footer.php'; ?>
-  </div>
+    <!-- footerSection -->
+    <div class="bottom-container">
+        <?php include './partials/footer.php'; ?>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

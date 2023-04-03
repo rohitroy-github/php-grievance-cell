@@ -1,3 +1,4 @@
+<?php include './partials/constants.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +8,16 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./styles/admin.css" />
-  <title>Admin Login</title>
+  <title>Grievance Cell | Admin Login</title>
 </head>
 
 <body>
-  <?php include './partials/constants.php'; ?>
-
   <div class="container">
     <div class="col-md-6 col-lg-6">
+      <div>
+        <p class="text-center">New to <b>Grievance Cell</b> ? <a href="register.php">Register</a>
+          as an admin !</p>
+      </div>
       <form class="login-form" action="" method="POST">
         <h2 class="text-center">Admin Panel Login</h2>
         <br />
@@ -31,23 +34,28 @@
         </button>
       </form>
       <br />
-      <!-- loginMessages -->
-      <?php
-      if (isset($_SESSION['logout'])) {
-        echo $_SESSION['logout'];
-        unset($_SESSION['logout']);
-      }
+      <!-- sessionalMessages -->
+      <div>
+        <p class="text-center">Just want to register your complain ? <a href="<?php echo HOMEURL; ?>login.php">Login</a>
+          as an user here
+          !</p>
+        <?php
+        if (isset($_SESSION['logout'])) {
+          echo $_SESSION['logout'];
+          unset($_SESSION['logout']);
+        }
 
-      if (isset($_SESSION['login'])) {
-        echo $_SESSION['login'];
-        unset($_SESSION['login']);
-      }
+        if (isset($_SESSION['login'])) {
+          echo $_SESSION['login'];
+          unset($_SESSION['login']);
+        }
 
-      if (isset($_SESSION['no-login-message'])) {
-        echo $_SESSION['no-login-message'];
-        unset($_SESSION['no-login-message']);
-      }
-      ?>
+        if (isset($_SESSION['no-login-message'])) {
+          echo $_SESSION['no-login-message'];
+          unset($_SESSION['no-login-message']);
+        }
+        ?>
+      </div>
     </div>
   </div>
 
@@ -70,7 +78,7 @@
 
   if ($count == 1) {
     $_SESSION['login'] =
-      '<p class="text-center">You have successfully logged in !</p>';
+      '<p class="text-center">You have successfully logged in as an admin !</p>';
 
     // Login session check
     $_SESSION['user'] = $username;

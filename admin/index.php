@@ -18,18 +18,19 @@
   <div class="top-container">
     <?php include './partials/navbar.php'; ?>
   </div>
-
-  <?php if (isset($_SESSION['login'])) {
-    echo $_SESSION['login'];
-    unset($_SESSION['login']);
-  } ?>
-
   <!-- mainContentSection -->
   <div class="main-container container">
     <div class="content">
       <h2 style="font-weight: 500; text-align: center;">
         <b>Dashboard</b>
       </h2>
+      <!-- sessionalMessages -->
+      <div>
+        <?php if (isset($_SESSION['login'])) {
+          echo $_SESSION['login'];
+          unset($_SESSION['login']);
+        } ?>
+      </div>
       <div class="table-responsive">
         <table class="table">
           <thead>

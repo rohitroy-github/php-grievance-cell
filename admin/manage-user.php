@@ -15,8 +15,8 @@
 <body>
     <!-- Menu Section -->
     <div class="top-container">
-      <?php include './partials/navbar.php'; ?>
-    </div>  
+        <?php include './partials/navbar.php'; ?>
+    </div>
 
     <!-- Main Content Section-->
     <div class="main-container container">
@@ -24,10 +24,8 @@
             <h2 style="font-weight: 500; text-align: center;">
                 <b>Manage Users</b>
             </h2>
-            <div class="d-flex justify-content-center" style="padding: 1%;">
-            <a href="add-admin.php" class="btn adminPanelBtn">Add New User</a>
-</div>
-
+            <br />
+            <!-- sessionalMessages -->
             <div>
                 <?php
                 if (isset($_SESSION['add'])) {
@@ -89,7 +87,7 @@
                     <tbody>
 
                         <?php
-                        $sql = 'SELECT * FROM tbl_admin';
+                        $sql = 'SELECT * FROM tbl_user';
 
                         $res = mysqli_query($conn, $sql);
 
@@ -107,43 +105,41 @@
                                     $full_name = $rows['full_name'];
                                     $username = $rows['username'];
                                     ?>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <?php echo $sn++; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <?php echo $full_name; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <?php echo $username; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn mr-2">
+                                                    Change Password
+                                                </a>
+                                                <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn mr-2">
+                                                    View / Update User
+                                                </a>
+                                                <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn">
+                                                    Delete User
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                        <tr>
-                            <td>
-                                <p>
-                                    <?php echo $sn++; ?>
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <?php echo $full_name; ?>
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <?php echo $username; ?>
-                                </p>
-
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-center">
-                                    <a href="<?php echo HOMEURL; ?>admin/update-passowrd.php?id=<?php echo $id; ?>"
-                                        class="btn adminPanelBtn mr-2">
-                                        Change Password
-                                    </a>
-                                    <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>"
-                                        class="btn adminPanelBtn mr-2">
-                                        Update User
-                                    </a>
-                                    <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>"
-                                        class="btn adminPanelBtn">
-                                        Delete User
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <?php
+                                    <?php
                                 }
                             }
                         }
@@ -154,10 +150,10 @@
         </div>
     </div>
 
-   <!-- footerSection -->
-   <div class="bottom-container">
-   <?php include './partials/footer.php'; ?>
-  </div>
+    <!-- footerSection -->
+    <div class="bottom-container">
+        <?php include './partials/footer.php'; ?>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -37,7 +37,6 @@
             <div class="d-flex justify-content-center" style="padding: 1%;">
                 <a href="add-complain.php" class="btn adminPanelBtn">Raise A New Complain</a>
             </div>
-
             <!-- sessionalMessages -->
             <div>
                 <?php if (isset($_SESSION['login'])) {

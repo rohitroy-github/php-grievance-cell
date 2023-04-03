@@ -1,7 +1,5 @@
 <?php
-include './partials/constants.php';
-include './partials/login-check.php';
-?>
+include './partials/constants.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,28 +7,20 @@ include './partials/login-check.php';
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles/admin.css" />
-    <title>Add New </title>
+    <title>Grievance Cell | Admnin Registration</title>
 </head>
 
 <body>
     <div class="container">
         <div class="col-md-6 col-lg-6">
             <form class="login-form" action="" method="POST">
-                <h2 class="text-center">Add New Admin</h2>
+                <h2 class="text-center">Register New Admin</h2>
                 <br />
-                <!-- sessionalMessages -->
-                <div>
-                    <?php if (isset($_SESSION['add-admin-failure'])) {
-                        echo $_SESSION['add-admin-failure'];
-                        unset($_SESSION['add-admin-failure']);
-                    } ?>
-                </div>
                 <div class="form-group">
-                    <label for="username">Full Name</label>
+                    <label for="full_name">Full Name</label>
                     <input name="full_name" type="text" class="form-control" id="full_name"
                         placeholder="Enter your full name ?" />
                 </div>
@@ -42,12 +32,23 @@ include './partials/login-check.php';
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input name="password" type="password" class="form-control" id="password"
-                        placeholder="Enter a password" />
+                        placeholder="Enter a password ?" />
                 </div>
                 <button name="submit" type="submit" class="btn btn-primaryColor" value="login">
-                    Add New Admin
+                    Register
                 </button>
             </form>
+            <br />
+            <!-- sessionalMessages -->
+            <div>
+                <p class="text-center">Already an admin ? <a href="login.php">Back to login</a> !</p>
+                <?php
+                if (isset($_SESSION['registration-failure'])) {
+                    echo $_SESSION['registration-failure'];
+                    unset($_SESSION['registration-failure']);
+                }
+                ?>
+            </div>
         </div>
     </div>
 
@@ -62,32 +63,31 @@ include './partials/login-check.php';
     // Store in variables
     $full_name = $_POST['full_name'];
     $username = $_POST['username'];
+
     // Password encryption using md5
     $password = md5($_POST['password']);
+
     // Set SQL query
-    $sql = "INSERT INTO tbl_admin SET
+    $sql = "INSERT INTO tbl_user SET
   full_name = '$full_name',
   username = '$username',
   password = '$password'
   ";
+
     // Execute query into database
-    ($res = mysqli_query($conn, $sql)) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql);
     // Check whether data is inserted ?
     if ($res == true) {
         // Data inserted
-        $_SESSION['add-admin-success'] =
-            '<p class="text-center">New admin added successfully !</p>';
-
-        // Redirect to ManageAdmin Page
-        header('location:' . HOMEURL . 'admin/manage-admin.php');
+        $_SESSION['registration-success'] =
+            '<p class="text-center">User registered successfully !</p>';
+        // redirectingToLogin
+        header('location:' . HOMEURL . 'admin/');
     } else {
         // Failed
-        $_SESSION['add-admin-failure'] =
-            '<p class="text-center">Failed to add admin. Please try again later !</p>';
-
-        // Redirect to addAdmin Page again
-        header('location:' . HOMEURL . 'admin/add-admin.php');
+        $_SESSION['registration-failure'] =
+            '<p class="text-center">Failed to register. Please try again later  !</p>';
+        // redirectingToRetry
+        header('location:' . HOMEURL . '/register.php');
     }
-    // echo $sql;
-}
-?>
+} ?>
