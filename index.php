@@ -64,9 +64,6 @@
                                 <h6><b>Category</b></h6>
                             </th>
                             <th>
-                                <h6><b>Status</b></h6>
-                            </th>
-                            <th>
                                 <h6><b>Date</b></h6>
                             </th>
                             <th>
@@ -89,7 +86,7 @@
                             $sn = 1;
 
                             if ($count > 0) {
-                                while ($rows = mysqli_fetch_assoc($tbl_complain)) {
+                                while ($rows = mysqli_fetch_assoc($res_tbl_complain)) {
 
                                     $id = $rows['id'];
                                     $complain_header = $rows['complain_header'];
@@ -118,11 +115,6 @@
                                                 <?php echo $category_title; ?>
                                             </p>
                                         </td>
-                                        <!-- <td>
-                                            <p>
-                                                <?php echo $status; ?>
-                                            </p>
-                                        </td> -->
                                         <td>
                                             <p>
                                                 <?php echo $complain_date; ?>

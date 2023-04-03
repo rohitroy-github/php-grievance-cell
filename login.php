@@ -14,6 +14,10 @@
 
   <div class="container">
     <div class="col-md-6 col-lg-6">
+      <div>
+        <p class="text-center">New to <b>Grievance Cell</b> ? <a href="register.php">Register</a>
+          here !</p>
+      </div>
       <form class="login-form" action="" method="POST">
         <h2 class="text-center">Grievance Cell Login</h2>
         <br />
@@ -32,8 +36,7 @@
       <br />
       <!-- sessionalMessages -->
       <div>
-        <p class="text-center">New to <b>Grievance Cell</b> ? <a href="register.php">Register</a>
-          here !</p>
+        <p class="text-center">Are you an admin ? <a href="admin/login.php">Login</a> here !</p>
         <?php
         if (isset($_SESSION['logout'])) {
           echo $_SESSION['logout'];
