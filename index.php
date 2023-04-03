@@ -48,6 +48,11 @@
                     echo $_SESSION['complain-lodge-success'];
                     unset($_SESSION['complain-lodge-success']);
                 } ?>
+
+                <?php if (isset($_SESSION['complain-edit-success'])) {
+                    echo $_SESSION['complain-edit-success'];
+                    unset($_SESSION['complain-edit-success']);
+                } ?>
             </div>
             <div class="table-responsive">
                 <table class="table">
@@ -130,14 +135,23 @@
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <a href="<?php echo HOMEURL; ?>/edit-complain.php?id=<?php echo $id; ?>"
-                                                    class="btn adminPanelBtn mr-2">
-                                                    Edit Complain
-                                                </a>
-                                                <a href="<?php echo HOMEURL; ?>admin/update-order.php?id=<?php echo $id; ?>"
-                                                    class="btn adminPanelBtn mr-2">
-                                                    View Response
-                                                </a>
+                                                <?php
+                                                if ($status == 'unresolved') {
+                                                    ?>
+                                                    <a href="<?php echo HOMEURL; ?>edit-complain.php?complainId=<?php echo $id; ?>"
+                                                        class="btn adminPanelBtn mr-2">
+                                                        Edit Complain
+                                                    </a>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <a href="<?php echo HOMEURL; ?>view-response.php?id=<?php echo $id; ?>"
+                                                        class="btn adminPanelBtn mr-2">
+                                                        View Response
+                                                    </a>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </td>
                                     </tr>
