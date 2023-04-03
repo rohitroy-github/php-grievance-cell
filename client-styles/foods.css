@@ -1,0 +1,48 @@
+.card {
+  margin-bottom: 30px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-img-top-catgeries {
+  height: 500px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.description {
+  height: 80px;
+}
+
+.btn {
+  width: 100%;
+}
+
+.card-body .adminPanelBtn {
+  background-color: #fc8019;
+  border: 3px solid #fc8019;
+  font-weight: 500;
+  color: white;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-body .adminPanelBtn:hover {
+  background-color: #ffffff;
+  color: black;
+  border: 3px solid #fc8019;
+  font-weight: 500;
+}

@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* navbarStyles */
+.navbar {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 10vh;
+}
+.navbar-light {
+  background-color: silver;
+}
+
+.navbar-light .navbar-brand {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: black;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+li {
+  font-weight: 800;
+  margin-right: 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+  margin: 2px 5px 2px 5px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: black;
+}
+
+.navbar-light .navbar-nav .nav-item:hover {
+  background-color: white;
+  border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    margin-top: 20px;
+  }
+
+  .nav-link {
+    margin: 0 0 1rem;
+  }
+
+  .navbar-collapse {
+    margin-top: 10px;
+  }
+}
+
+/* dashboardStyles */
+.main-container {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100vw;
+  overflow: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.top-container {
+  display: flex;
+  height: 10vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.bottom-container {
+  display: flex;
+  height: 10vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.content {
+  width: 100%;
+}
+.table-responsive {
+  margin: auto;
+}
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+h3 {
+  text-align: center;
+  align-items: center;
+}
+h4 {
+  text-align: center;
+  align-items: center;
+}
+
+/* footerStyles */
+footer {
+  width: 100%;
+  height: 10vh;
+  background-color: silver;
+  color: black;
+  bottom: 0;
+  margin: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+footer p:hover {
+  background-color: white;
+  color: black;
+}
+
+/* manageCategoriesStyles */
+
+.img-fluid {
+  width: 100px;
+  height: auto;
+}
+
+p {
+  text-align: center;
+  align-items: center;
+  padding: 7px 12px;
+  font-size: 15px;
+  margin: 0;
+}
+
+h5 {
+  text-align: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 7px 12px;
+  font-size: 15px;
+}
+
+tbody .adminPanelBtn {
+  background-color: silver;
+  border: 2px solid black;
+  font-weight: 800;
+  color: black;
+}
+
+.adminPanelBtn:hover {
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid black;
+  font-weight: 800;
+}
+
+.content .adminPanelBtn {
+  background-color: silver;
+  border: 2px solid black;
+  font-weight: 800;
+  color: black;
+}
+
+.content .adminPanelBtn:hover {
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid black;
+  font-weight: 800;
+}
+
+/* buttonsUsedInForms */
+
+.formBtn {
+  background-color: silver;
+  border: 2px solid black;
+  font-weight: 800;
+  color: black;
+}
+
+.formBtn:hover {
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid black;
+  font-weight: 800;
+}

@@ -1,0 +1,35 @@
+#about-us {
+  display: flex;
+}
+
+#about-us h2 {
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+#about-us p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: left;
+  padding: 0;
+}
+
+#about-us img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  #about-us img {
+    max-width: 60%;
+    height: auto;
+    display: block;
+  }
+
+  #about-us {
+    padding: 25px;
+  }
+}

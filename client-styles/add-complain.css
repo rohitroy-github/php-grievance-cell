@@ -1,0 +1,39 @@
+/* Styling for Admin Section */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+/* CSS for login page */
+
+body {
+  background-color: #f1f1f1;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px silver;
+}
+
+.login-form input {
+  margin-bottom: 20px;
+}
+
+.login-form button {
+  width: 100%;
+}
+
+/* Center the form horizontally and vertically */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
