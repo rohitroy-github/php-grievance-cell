@@ -48,6 +48,17 @@ include './client-partials/constants.php'; ?>
                     Register
                 </button>
             </form>
+            <br />
+            <!-- sessionalMessages -->
+            <div>
+                <p class="text-center">Already an user ? <a href="login.php">Back to login</a> !</p>
+                <?php
+                if (isset($_SESSION['registration-failure'])) {
+                    echo $_SESSION['registration-failure'];
+                    unset($_SESSION['registration-failure']);
+                }
+                ?>
+            </div>
         </div>
     </div>
 
