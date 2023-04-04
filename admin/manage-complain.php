@@ -29,6 +29,12 @@
                     // Ending session
                     unset($_SESSION['update-order']);
                 } ?>
+
+                <?php if (isset($_SESSION['complain-reponse-success'])) {
+                    echo $_SESSION['complain-reponse-success'];
+                    // Ending session
+                    unset($_SESSION['complain-reponse-success']);
+                } ?>
             </div>
             <br />
             <div class="table-responsive">
@@ -120,7 +126,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <a href="<?php echo HOMEURL; ?>admin/update-order.php?id=<?php echo $id; ?>"
+                                                <a href="<?php echo HOMEURL; ?>admin/add-response.php?complainId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
                                                     View / Respond
                                                 </a>

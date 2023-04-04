@@ -200,3 +200,19 @@ tbody .adminPanelBtn {
   border: 2px solid black;
   font-weight: 800;
 }
+
+/* formButton */
+
+.formBtn {
+  background-color: silver;
+  border: 2px solid black;
+  font-weight: 800;
+  color: black;
+}
+
+.formBtn:hover {
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid black;
+  font-weight: 800;
+}

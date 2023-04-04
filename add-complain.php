@@ -40,7 +40,7 @@ $email = $rows2['email'];
     <div class="container">
         <div class="col-md-7 col-lg-7">
             <form class="login-form" action="" method="POST" enctype="multipart/form-data">
-                <h2 class="text-center">Lodge A Complain</h2>
+                <h2 class="text-center">Lodge A New Complain</h2>
                 <br />
                 <div class="form-group">
                     <label for="title">Complain Header</label>

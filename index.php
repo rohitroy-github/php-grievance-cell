@@ -145,7 +145,7 @@
                                                     <?php
                                                 } else {
                                                     ?>
-                                                    <a href="<?php echo HOMEURL; ?>view-response.php?id=<?php echo $id; ?>"
+                                                    <a href="<?php echo HOMEURL; ?>view-response.php?complainId=<?php echo $id; ?>"
                                                         class="btn adminPanelBtn mr-2">
                                                         View Response
                                                     </a>
