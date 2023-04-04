@@ -36,41 +36,22 @@
                     unset($_SESSION['category-add-success']);
                 }
 
-                if (isset($_SESSION['remove-image-file'])) {
-                    echo $_SESSION['remove-image-file'];
-                    // Ending session
-                    unset($_SESSION['remove-image-file']);
-                }
-
                 if (isset($_SESSION['delete-category'])) {
                     echo $_SESSION['delete-category'];
                     // Ending session
                     unset($_SESSION['delete-category']);
                 }
 
-                if (isset($_SESSION['update-category'])) {
-                    echo $_SESSION['update-category'];
+                if (isset($_SESSION['category-update-success'])) {
+                    echo $_SESSION['category-update-success'];
                     // Ending session
-                    unset($_SESSION['update-category']);
+                    unset($_SESSION['category-update-success']);
                 }
 
                 if (isset($_SESSION['no-category-found'])) {
                     echo $_SESSION['no-category-found'];
                     // Ending session
                     unset($_SESSION['no-category-found']);
-                }
-
-                if (
-                    isset($_SESSION['failed-to-update-upload-category-image'])
-                ) {
-                    echo $_SESSION['failed-to-update-upload-category-image'];
-                    // Ending session
-                    unset($_SESSION['failed-to-update-upload-category-image']);
-                }
-
-                if (isset($_SESSION['failed-remove'])) {
-                    echo $_SESSION['failed-remove'];
-                    unset($_SESSION['failed-remove']);
                 }
                 ?>
             </div>
@@ -121,11 +102,11 @@
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <a href="<?php echo HOMEURL; ?>admin/update-category.php?id=
+                                                <a href="<?php echo HOMEURL; ?>admin/update-category.php?categoryId=
                                     <?php echo $id; ?>" class="btn adminPanelBtn mr-2">
                                                     Update Category
                                                 </a>
-                                                <a href="<?php echo HOMEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>"
+                                                <a href="<?php echo HOMEURL; ?>admin/delete-category.php?categoryId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
                                                     Delete Category
                                                 </a>

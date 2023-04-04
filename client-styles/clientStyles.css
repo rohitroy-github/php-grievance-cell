@@ -171,6 +171,7 @@ h5 {
 .btn {
   padding: 7px 12px;
   font-size: 15px;
+  width: fit-content;
 }
 
 tbody .adminPanelBtn {
@@ -208,6 +209,7 @@ tbody .adminPanelBtn {
   border: 2px solid black;
   font-weight: 800;
   color: black;
+  width: fit-content;
 }
 
 .formBtn:hover {
