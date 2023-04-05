@@ -39,6 +39,8 @@
             </div>
             <!-- sessionalMessages -->
             <div>
+                <p class="text-center">All your <b>Complains</b> are listed here !
+                </p>
                 <?php if (isset($_SESSION['login'])) {
                     echo $_SESSION['login'];
                     unset($_SESSION['login']);
