@@ -10,7 +10,7 @@ include './partials/constants.php'; ?>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles/admin.css" />
-    <title>Grievance Cell | Admnin Registration</title>
+    <title>Grievance Cell | Admin Registration</title>
 </head>
 
 <body>
@@ -68,7 +68,7 @@ include './partials/constants.php'; ?>
     $password = md5($_POST['password']);
 
     // Set SQL query
-    $sql = "INSERT INTO tbl_user SET
+    $sql = "INSERT INTO tbl_admin SET
   full_name = '$full_name',
   username = '$username',
   password = '$password'

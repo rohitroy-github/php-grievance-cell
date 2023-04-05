@@ -104,11 +104,11 @@
                                             <div class="d-flex justify-content-center">
                                                 <a href="<?php echo HOMEURL; ?>admin/update-category.php?categoryId=
                                     <?php echo $id; ?>" class="btn adminPanelBtn mr-2">
-                                                    Update Category
+                                                    Update
                                                 </a>
                                                 <a href="<?php echo HOMEURL; ?>admin/delete-category.php?categoryId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
-                                                    Delete Category
+                                                    Delete
                                                 </a>
                                             </div>
                                         </td>

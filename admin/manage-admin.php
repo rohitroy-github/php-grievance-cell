@@ -125,11 +125,11 @@
                                                 </a> -->
                                                 <a href="<?php echo HOMEURL; ?>admin/update-admin.php?adminId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
-                                                    View / Update Admin
+                                                    View | Update
                                                 </a>
                                                 <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?adminId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn">
-                                                    Delete Admin
+                                                    Delete
                                                 </a>
                                             </div>
                                         </td>

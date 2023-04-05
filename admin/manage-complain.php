@@ -35,8 +35,19 @@
                     // Ending session
                     unset($_SESSION['complain-reponse-success']);
                 } ?>
+
+                <?php if (isset($_SESSION['delete-complain'])) {
+                    echo $_SESSION['delete-complain'];
+                    // Ending session
+                    unset($_SESSION['delete-complain']);
+                } ?>
+
+                <?php if (isset($_SESSION['delete-complain-check-failed'])) {
+                    echo $_SESSION['delete-complain-check-failed'];
+                    // Ending session
+                    unset($_SESSION['delete-complain-check-failed']);
+                } ?>
             </div>
-            <br />
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -128,7 +139,12 @@
                                             <div class="d-flex justify-content-center">
                                                 <a href="<?php echo HOMEURL; ?>admin/add-response.php?complainId=<?php echo $id; ?>"
                                                     class="btn adminPanelBtn mr-2">
-                                                    View / Respond
+                                                    View | Respond
+                                                </a>
+
+                                                <a href="<?php echo HOMEURL; ?>admin/delete-complain.php?complainId=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn mr-2">
+                                                    Delete
                                                 </a>
                                             </div>
                                         </td>
