@@ -1,2 +1,0 @@
-CREATE TABLE `php-grievance-cell`.`tbl_admin` (`id` INT(50) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'admin-id' , `full_name` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'admin-full-name' , `username` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'admin-username' , `password` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'admin-password' , PRIMARY KEY (`id`(50))) ENGINE = InnoDB;
-

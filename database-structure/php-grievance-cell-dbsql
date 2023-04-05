@@ -1,0 +1,144 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 05, 2023 at 10:38 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `php-grievance-cell`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_admin`
+--
+
+CREATE TABLE `tbl_admin` (
+  `id` int(11) UNSIGNED NOT NULL COMMENT 'admin-id',
+  `full_name` varchar(100) NOT NULL COMMENT 'admin-full-name',
+  `username` varchar(100) NOT NULL COMMENT 'admin-username',
+  `password` varchar(255) NOT NULL COMMENT 'admin-password'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='admin-db';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_complain`
+--
+
+CREATE TABLE `tbl_complain` (
+  `id` int(11) UNSIGNED NOT NULL COMMENT 'complain-id',
+  `full_name` varchar(100) CHARACTER SET utf8mb4 NOT NULL COMMENT 'complainant-full-name',
+  `user_id` int(11) NOT NULL COMMENT 'user-id',
+  `contact` varchar(20) CHARACTER SET utf8mb4 NOT NULL COMMENT 'complainant-contact',
+  `email` varchar(150) CHARACTER SET utf8mb4 NOT NULL COMMENT 'complainant-email',
+  `complain` mediumtext CHARACTER SET utf8mb4 NOT NULL COMMENT 'complain',
+  `admin_response` mediumtext CHARACTER SET utf8mb4 NOT NULL DEFAULT 'Not yet responded !' COMMENT 'amdin-complain-response',
+  `complain_header` text CHARACTER SET utf8mb4 NOT NULL COMMENT 'complain-header',
+  `complain_date` date NOT NULL DEFAULT current_timestamp() COMMENT 'comaplained-on',
+  `category_id` int(11) UNSIGNED NOT NULL,
+  `status` varchar(150) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'unresolved' COMMENT 'complain-status'
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_complain_category`
+--
+
+CREATE TABLE `tbl_complain_category` (
+  `id` int(11) UNSIGNED NOT NULL COMMENT 'complain-category-id',
+  `title` varchar(100) NOT NULL COMMENT 'complain-category-title'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='complain-category-db';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id` int(11) UNSIGNED NOT NULL COMMENT 'user-id',
+  `full_name` varchar(100) NOT NULL COMMENT 'user-full-name',
+  `username` varchar(100) NOT NULL COMMENT 'user-username',
+  `password` varchar(255) NOT NULL COMMENT 'user-password',
+  `contact` varchar(20) NOT NULL COMMENT 'user-contact',
+  `email` varchar(150) NOT NULL COMMENT 'user-email'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='admin-user';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_complain`
+--
+ALTER TABLE `tbl_complain`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_id` (`category_id`),
+  ADD KEY `category_id_2` (`category_id`);
+
+--
+-- Indexes for table `tbl_complain_category`
+--
+ALTER TABLE `tbl_complain_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'admin-id';
+
+--
+-- AUTO_INCREMENT for table `tbl_complain`
+--
+ALTER TABLE `tbl_complain`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'complain-id';
+
+--
+-- AUTO_INCREMENT for table `tbl_complain_category`
+--
+ALTER TABLE `tbl_complain_category`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'complain-category-id';
+
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'user-id';
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
