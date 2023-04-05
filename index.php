@@ -53,6 +53,11 @@
                     echo $_SESSION['complain-edit-success'];
                     unset($_SESSION['complain-edit-success']);
                 } ?>
+
+                <?php if (isset($_SESSION['delete-complain'])) {
+                    echo $_SESSION['delete-complain'];
+                    unset($_SESSION['delete-complain']);
+                } ?>
             </div>
             <div class="table-responsive">
                 <table class="table">
@@ -152,6 +157,10 @@
                                                     <?php
                                                 }
                                                 ?>
+                                                <a href="<?php echo HOMEURL; ?>delete-complain.php?complainId=<?php echo $id; ?>"
+                                                    class="btn adminPanelBtn mr-2">
+                                                    Delete Complain
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>

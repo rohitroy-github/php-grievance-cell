@@ -24,7 +24,7 @@ if ($status == 'resolved') {
     } else {
 
         $_SESSION['delete-complain'] =
-            '<p class="text-center">Failed to delete admin. Please try again later !</p>';
+            '<p class="text-center">Failed to delete selected complain. Please try again later !</p>';
 
         header('location:' . HOMEURL . 'admin/manage-complain.php');
     }
