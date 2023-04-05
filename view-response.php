@@ -35,7 +35,7 @@ $status = $rows_complain['status'];
 
 <body>
     <div class="container">
-        <div class="col-md-9 col-lg-9">
+        <div class="col-md-9 col-lg-8 col-sm-12">
             <form class="login-form" action="" method="POST">
                 <h2 class="text-center">View Response</h2>
                 <br />
