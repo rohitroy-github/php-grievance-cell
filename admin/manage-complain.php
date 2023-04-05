@@ -24,6 +24,8 @@
             </h2>
             <!-- sessionalMessages -->
             <div>
+                <p class="text-center"><b>Complains</b> made by the registered users are listed here !
+                </p>
                 <?php if (isset($_SESSION['update-order'])) {
                     echo $_SESSION['update-order'];
                     // Ending session
@@ -153,13 +155,9 @@
                                 }
                             } else {
                                 ?>
-                                <tr>
-                                    <td>
-                                        <p>
-                                            Currently there are no complains !
-                                        </p>
-                                    </td>
-                                </tr>
+                                <p>
+                                    Currently there are no listed complains !
+                                </p>
                                 <?php
                             }
                         }

@@ -30,6 +30,8 @@
             </div>
             <!-- sessionalMessages -->
             <div>
+                <p class="text-center">All registered <b>Admins</b> are listed here !
+                </p>
                 <?php
                 if (isset($_SESSION['add-admin-success'])) {
                     echo $_SESSION['add-admin-success'];

@@ -26,6 +26,8 @@
             </h2>
             <!-- sessionalMessages -->
             <div>
+                <p class="text-center">All registered <b>Users</b> are listed here !
+                </p>
                 <?php
                 if (isset($_SESSION['update-user-success'])) {
                     echo $_SESSION['update-user-success'];
@@ -56,7 +58,6 @@
                 }
                 ?>
             </div>
-            <br />
             <div class="table-responsive">
                 <table class="table">
                     <thead>

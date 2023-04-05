@@ -113,23 +113,18 @@
                                             </div>
                                         </td>
                                     </tr>
-
                                     <?php
                                 }
                             } else {
                                 ?>
-                                <tr>
-                                    <td>
-                                        <p class="text-center">
-                                            No categories found yet !
-                                        </p>
-                                    </td>
-                                </tr>
+                                <p>
+                                    Currently there are no listed categories. <a href="add-category.php"><b>Click here</b></a>
+                                    to create one now !
+                                </p>
                                 <?php
                             }
                         }
                         ?>
-                    </tbody>
                 </table>
             </div>
         </div>

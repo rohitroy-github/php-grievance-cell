@@ -21,7 +21,6 @@ include './partials/login-check.php';
         <div class="col-md-6 col-lg-6">
             <form class="login-form" action="" method="POST">
                 <h2 class="text-center">Add New Admin</h2>
-                <br />
                 <!-- sessionalMessages -->
                 <div>
                     <?php if (isset($_SESSION['add-admin-failure'])) {

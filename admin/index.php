@@ -26,12 +26,13 @@
       </h2>
       <!-- sessionalMessages -->
       <div>
+        <p class="text-center">A summary of all the activities on <b>Grievance Cell</b> !
+        </p>
         <?php if (isset($_SESSION['login'])) {
           echo $_SESSION['login'];
           unset($_SESSION['login']);
         } ?>
       </div>
-      <br />
       <div class="table-responsive">
         <table class="table">
           <thead>
