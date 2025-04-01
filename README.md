@@ -1,4 +1,4 @@
-# Grievance Cell - Complaint Management System
+# Grievance Cell
 
 Grievance Cell is a **PHP-based complaint management application** designed to streamline the process of **lodging and managing grievances**. This project enhances backend development skills using PHP and MySQL while ensuring an efficient user experience.
 
